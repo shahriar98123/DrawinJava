@@ -5,6 +5,7 @@ import java.awt.Color;
 import java.awt.BasicStroke;
 import java.awt.Dimension;
 import java.awt.Graphics;
+import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -41,14 +42,33 @@ public class ArtPanel extends JPanel
 	}
 	
 	public void clearImage()
+	{
+		
+	}
 	
 	public void drawLine(int currentX, int currentY, int width)
+	{
+		
+	}
 	
 	public void drawDot(int currentX, int currentY, int width)
+	{
+		Graphics2D current = currentCanvas.createGraphics();
+		current.setColor(currentColor);
+		current.setStroke(new BasicStroke(width));
+		current.drawOval(currentX, currentY, width, width);
+		repaint();
+	}
 	
 	public void saveImage()
+	{
+		
+	}
 	
 	public void loadImage()
+	{
+		
+	}
 	
 	public void setupPanel()
 	{
