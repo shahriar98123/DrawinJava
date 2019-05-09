@@ -58,8 +58,31 @@ public class ArtPanel extends JPanel
 	}
 	
 	public void setCurrentColor(String color)
+	{
+		if(color.equalsIgnoreCase("Black"))
+		{
+			currentColor = Color.BLACK;
+		}
+		else if(color.equals("purple"))
+		{
+			currentColor = new Color(75, 0, 130);
+		}
+		else
+		{
+			currentColor = randomColor();
+		}
+	}
 	
 	private Color randomColor()
+	{
+		int red = (int)(Math.random() * 256);
+		int green = (int)(Math.random() * 256);
+		int blue = (int)(Math.random() * 256);
+		int alpha = (int)(Math.random() * 256);
+		
+		Color randomColor = new Color(red, green, blue, alpha);
+		return randomColor;
+	}
 	
 	@Override
 	protected void paintComponent(Graphics graphics)
